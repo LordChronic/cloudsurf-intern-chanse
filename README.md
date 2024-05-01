@@ -1,0 +1,1 @@
+Welcome to the Cumzone, domain of the Godking, Heretic Denier of The Beast, Lord Chronic.
