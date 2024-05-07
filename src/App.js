@@ -1,24 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './components/Home';
+import About from './components/About';
+import Contact from './components/Contact';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Please don't fire me, Ryan :(
-        </p>
-        <a
-          className="App-link"
-          href="https://www.twitch.tv/lord_chronic"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Drop a Follow?
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route index path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>    
+    </BrowserRouter>
   );
 }
 
