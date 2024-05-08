@@ -22,9 +22,7 @@ const Navbar = () => {
         },
         logo: {
             padding: '15px 20px',
-            textDecoration: 'none',
-            color: 'white',
-            height: '50px'
+            // height: '50px'
         },
         mainNav: {
             listStyle: 'none',
