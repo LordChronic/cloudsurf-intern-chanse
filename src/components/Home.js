@@ -22,6 +22,7 @@ const styles = {
     picture: {
         height: "300px",
         width: "450px",
+        padding: "30px",
         
     }
     

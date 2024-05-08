@@ -26,6 +26,14 @@ function About() {
         <li>Responsive Web Design</li>
         <li>Version Control (Git)</li>
       </ul>
+      <h3>Experience</h3>
+        <ul>
+            <li>HVAC Service Technician: 5 1/5 years</li>
+            <li>Natural Gas Technician</li>
+            <li>Less than a month of FreeCodeCamp</li>
+            <li>Certified Loverboy?</li>
+            <li>Goon King: 27 years</li>
+        </ul>
           </div>
 
     );
