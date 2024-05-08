@@ -20,7 +20,8 @@ const styles = {
         
     },
     picture: {
-        height: "450px",
+        height: "300px",
+        width: "450px",
         
     }
     
@@ -31,7 +32,7 @@ function Home() {
         <div style={styles.container}>
             <Navbar />
 
-            <img src={picture} style={styles.picture}/>
+            <center><img src={picture} style={styles.picture}/></center>
             <h1 style={styles.header} >
             <center>Welcome to the domain of the Godking, Heretic Denier of The Beast, Lord Chronic.</center>  
             </h1>
