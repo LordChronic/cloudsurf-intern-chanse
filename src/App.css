@@ -5,7 +5,6 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
-  
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -15,7 +14,13 @@
 }
 
 .App-header {
-  background-image: linear-gradient(to bottom right, #00cdff, #326dff, #8032ff, #ff97fc);
+  background-image: linear-gradient(
+    to bottom right,
+    #00cdff,
+    #326dff,
+    #8032ff,
+    #ff97fc
+  );
   min-height: 100vh;
   display: flex;
   flex-direction: column;
