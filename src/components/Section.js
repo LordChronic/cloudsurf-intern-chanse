@@ -8,7 +8,7 @@ const Section = ({ id, title, children }) => {
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#f1f1f1",
-    marginBottom: "10px",
+    // marginBottom: "10px",
     padding: "80px 20px 20px 20px", // Added padding at the top
     boxSizing: "border-box",
     backgroundImage:

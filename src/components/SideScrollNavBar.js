@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-scroll";
 import logo from "../logo.png";
 import HomeIcon from "@mui/icons-material/Home";
-import { ContactMail, ContactPage, Info } from "@mui/icons-material";
+import { ContactPage, Info } from "@mui/icons-material";
 
 const SideScrollNavBar = () => {
   const navBarStyle = {
@@ -24,16 +24,16 @@ const SideScrollNavBar = () => {
 
   const navItemStyle = {
     display: "inline-block",
-    color: "black",
+    color: "#3B3B3B",
     padding: "10px 10px",
     cursor: "pointer",
     transition: "background-color 0.3s",
   };
 
   const navItemHoverStyle = {
-    backgroundColor: "#00cdff",
+    backgroundColor: "#2f9ce8",
   };
-  // Media query for smaller screens
+
   const smallScreenNavBarStyle = {
     ...navBarStyle,
     padding: "5px 0", // Adjust padding for smaller screens
@@ -51,7 +51,7 @@ const SideScrollNavBar = () => {
     <div style={window.innerWidth < 600 ? smallScreenNavBarStyle : navBarStyle}>
       <nav>
         <ul style={navListStyle}>
-          <Link to="/">
+          <Link to="home" smooth={true} duration={500} offset={-50}>
             <img
               src={logo}
               style={{
@@ -60,6 +60,7 @@ const SideScrollNavBar = () => {
                 marginLeft: 10,
                 marginRight: 10,
               }}
+              alt="Logo"
             />
           </Link>
           {[
@@ -73,12 +74,7 @@ const SideScrollNavBar = () => {
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
-              <Link
-                to={item.name.toLowerCase()}
-                smooth={true}
-                duration={500}
-                offset={-50}
-              >
+              <Link to={item.name.toLowerCase()} smooth={true} duration={500}>
                 {item.icon}
               </Link>
             </li>

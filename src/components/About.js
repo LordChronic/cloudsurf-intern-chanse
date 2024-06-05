@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
+import { useInView } from "react-intersection-observer";
+import "animate.css"; // Import animate.css
 
 const styles = {
   container: {
@@ -9,29 +11,66 @@ const styles = {
 };
 
 function About() {
+  const [headerInView, setHeaderInView] = useState(false);
+  const [subHeaderInView, setSubHeaderInView] = useState(false);
+
+  const { ref: headerRef, inView: headerVisible } = useInView({
+    threshold: 0.3,
+    triggerOnce: false,
+  });
+
+  const { ref: subHeaderRef, inView: subHeaderVisible } = useInView({
+    threshold: 0.3,
+    triggerOnce: false,
+  });
+
+  useEffect(() => {
+    setHeaderInView(headerVisible);
+  }, [headerVisible]);
+
+  useEffect(() => {
+    setSubHeaderInView(subHeaderVisible);
+  }, [subHeaderVisible]);
+
   return (
-    <div style={styles.container}>
-      <h1>About Me</h1>
+    <div
+      style={styles.container}
+      className={`animate__animated ${headerInView ? "animate__fadeIn" : ""}`}
+    >
+      <h1 ref={headerRef}>About Me</h1>
       <p>
         Hi there! I'm Chanse Shaw, a HVAC Service Technician based in Las Vegas,
         NV. I have a passion for coding, video games, and reading different
-        types of books. I am currently enrolled at Western Governors Univeristy
+        types of books. I am currently enrolled at Western Governors University
         striving for my Bachelors of Applied Sciences with a focus in Cyber
         Security and I am currently attending an internship with CloudSurf for
-        Software Egineering.
+        Software Engineering.
       </p>
       <p>
         This website serves as my digital portfolio where I showcase my
         projects, share my thoughts, and connect with like-minded individuals.
       </p>
-      <h2>My Skills</h2>
+      <h2
+        ref={subHeaderRef}
+        className={`animate__animated ${
+          subHeaderInView ? "animate__fadeIn" : ""
+        }`}
+      >
+        My Skills
+      </h2>
       <ul>
         <li>JavaScript (React, Node.js)</li>
         <li>HTML5 & CSS3</li>
         <li>Responsive Web Design</li>
         <li>Version Control (Git)</li>
       </ul>
-      <h3>Experience</h3>
+      <h3
+        className={`animate__animated ${
+          subHeaderInView ? "animate__fadeIn" : ""
+        }`}
+      >
+        Experience
+      </h3>
       <ul>
         <li>HVAC Service Technician: 5 1/5 years</li>
         <li>Natural Gas Technician</li>

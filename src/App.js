@@ -1,4 +1,5 @@
 import React from "react";
+import "animate.css";
 import SideScrollNavBar from "./components/SideScrollNavBar";
 import Section from "./components/Section";
 import Home from "./components/Home";
