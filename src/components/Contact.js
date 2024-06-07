@@ -23,6 +23,8 @@ const styles = {
     objectFit: "cover", // Cover the entire area
     margin: "0",
     padding: "0",
+    top: 0,
+    // position: "fixed",
   },
   content: {
     flex: "1", // Take remaining vertical space

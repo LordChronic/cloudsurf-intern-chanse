@@ -13,17 +13,12 @@ const styles = {
   header: {
     color: "black",
   },
-  picture: {
-    height: "auto",
-    width: "50%",
-    borderRadius: "50%",
-    padding: "30px",
-  },
 };
 
 function Home() {
   const [headerInView, setHeaderInView] = useState(false);
   const [subHeaderInView, setSubHeaderInView] = useState(false);
+  const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 900);
 
   const { ref: headerRef, inView: headerVisible } = useInView({
     threshold: 0.3,
@@ -43,10 +38,26 @@ function Home() {
     setSubHeaderInView(subHeaderVisible);
   }, [subHeaderVisible]);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsLargeScreen(window.innerWidth > 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const pictureStyle = {
+    height: "auto",
+    width: isLargeScreen ? "25%" : "70%", // Adjust width based on screen size
+    borderRadius: "50%",
+    padding: "30px",
+  };
+
   return (
     <div style={styles.container}>
       <center>
-        <img src={picture} style={styles.picture} alt="Profile" />
+        <img src={picture} style={pictureStyle} alt="Profile" />
       </center>
       <div
         className={`animate__animated ${headerInView ? "animate__fadeIn" : ""}`}

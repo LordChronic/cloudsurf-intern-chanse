@@ -9,7 +9,7 @@ const Section = ({ id, title, children }) => {
     justifyContent: "center",
     backgroundColor: "#f1f1f1",
     // marginBottom: "10px",
-    padding: "80px 20px 20px 20px", // Added padding at the top
+    padding: "0px 20px", // Added padding at the top
     boxSizing: "border-box",
     backgroundImage:
       "linear-gradient(to bottom right, #00cdff, #326dff, #8032ff, #ff97fc)",
