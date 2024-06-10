@@ -9,9 +9,35 @@ const styles = {
     width: "100%",
     display: "flex",
     flexDirection: "column",
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: '20px',
+    backgroundColor: '#36454F',
+    borderRadius: '10px',
+    boxShadow: '0 0 20px rgba(0, 0, 0, 0.8)',
+    fontFamily: '"Segoe UI", Tahoma, Geneva, Verdana, sans-serif',
   },
   header: {
-    color: "black",
+    margin: '20px 0',
+    fontSize: '2em',
+    fontWeight: 'bold',
+    background: 'linear-gradient(to right, #00cdff, #326dff, #8032ff, #ff97fc)',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+  },
+  subHeader: {
+    fontSize: '1.5em',
+    fontWeight: 'normal',
+    background: 'linear-gradient(to right, #00cdff, #326dff, #8032ff, #ff97fc)',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    fontStyle: 'italic',
+  },
+  picture: {
+    height: 'auto',
+    borderRadius: '50%',
+    padding: '30px',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.5)',
   },
 };
 
@@ -48,10 +74,8 @@ function Home() {
   }, []);
 
   const pictureStyle = {
-    height: "auto",
+    ...styles.picture,
     width: isLargeScreen ? "25%" : "70%", // Adjust width based on screen size
-    borderRadius: "50%",
-    padding: "30px",
   };
 
   return (
@@ -64,25 +88,16 @@ function Home() {
         ref={headerRef}
       >
         <h1 style={styles.header}>
-          <center>
-            Welcome to the domain of the Godking, Heretic Denier of The Beast,
-            Lord Chronic.
-          </center>
+          Welcome to the domain of the Godking, Heretic Denier of The Beast, Lord Chronic.
         </h1>
-        <h2 style={styles.header}>
-          <center>HVAC Technician</center>
-          <center>Software Engineer</center>
+        <h2 style={styles.subHeader}>
+          Chanse Shaw
+          <br />
+          HVAC Technician
+          <br />
+          Software Engineer
         </h2>
       </div>
-      {/* <h2
-        style={styles.header}
-        className={`animate__animated ${
-          subHeaderInView ? "animate__rollIn" : ""
-        }`}
-        ref={subHeaderRef}
-      >
-        
-      </h2> */}
     </div>
   );
 }
