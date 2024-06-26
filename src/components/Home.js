@@ -6,38 +6,44 @@ import "animate.css"; // Import animate.css
 const styles = {
   container: {
     height: "100%",
-    width: "100%",
+    width: "85%",
     display: "flex",
     flexDirection: "column",
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: '20px',
-    backgroundColor: '#36454F',
-    borderRadius: '10px',
-    boxShadow: '0 0 20px rgba(0, 0, 0, 0.8)',
+    alignItems: "center",
+    justifyContent: "center",
+    padding: "20px",
+    backgroundColor: "#28282B",
+    borderRadius: "10px",
+    boxShadow: "0 0 20px rgba(0, 0, 0, 0.8)",
     fontFamily: '"Segoe UI", Tahoma, Geneva, Verdana, sans-serif',
   },
+  content: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    textAlign: "center",
+  },
   header: {
-    margin: '20px 0',
-    fontSize: '2em',
-    fontWeight: 'bold',
-    background: 'linear-gradient(to right, #00cdff, #326dff, #8032ff, #ff97fc)',
-    WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
+    margin: "20px 0",
+    fontSize: "2em",
+    fontWeight: "bold",
+    background: "linear-gradient(to right, #00cdff, #326dff, #8032ff, #ff97fc)",
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
   },
   subHeader: {
-    fontSize: '1.5em',
-    fontWeight: 'normal',
-    background: 'linear-gradient(to right, #00cdff, #326dff, #8032ff, #ff97fc)',
-    WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
-    fontStyle: 'italic',
+    fontSize: "1.5em",
+    fontWeight: "normal",
+    background: "linear-gradient(to right, #00cdff, #326dff, #8032ff, #ff97fc)",
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+    fontStyle: "italic",
   },
   picture: {
-    height: 'auto',
-    borderRadius: '50%',
-    padding: '30px',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.5)',
+    height: "auto",
+    borderRadius: "50%",
+    padding: "30px",
+    boxShadow: "0 8px 15px rgba(0, 0, 0, 0.5)",
   },
 };
 
@@ -80,23 +86,23 @@ function Home() {
 
   return (
     <div style={styles.container}>
-      <center>
+      <div style={styles.content}>
         <img src={picture} style={pictureStyle} alt="Profile" />
-      </center>
-      <div
-        className={`animate__animated ${headerInView ? "animate__fadeIn" : ""}`}
-        ref={headerRef}
-      >
-        <h1 style={styles.header}>
-          Welcome to the domain of the Godking, Heretic Denier of The Beast, Lord Chronic.
-        </h1>
-        <h2 style={styles.subHeader}>
-          Chanse Shaw
-          <br />
-          HVAC Technician
-          <br />
-          Software Engineer
-        </h2>
+        <div
+          className={`animate__animated ${
+            headerInView ? "animate__fadeIn" : ""
+          }`}
+          ref={headerRef}
+        >
+          <h1 style={styles.header}>Chanse K. F. Shaw</h1>
+          <h2 style={styles.subHeader}>
+            HVAC Technician
+            <br />
+            Software Engineer
+            <br />
+            God-King, Heretic Denier of the Beast
+          </h2>
+        </div>
       </div>
     </div>
   );

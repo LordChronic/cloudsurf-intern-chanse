@@ -1,8 +1,10 @@
 import React from "react";
-import { Link } from "react-scroll";
 import logo from "../logo.png";
 import HomeIcon from "@mui/icons-material/Home";
-import { ContactPage, Info } from "@mui/icons-material";
+import InfoIcon from "@mui/icons-material/Info";
+import ContactPageIcon from "@mui/icons-material/ContactPage";
+import AssignmentIcon from "@mui/icons-material/Assignment";
+// import { ContactPage, Info } from "@mui/icons-material";
 
 const SideScrollNavBar = () => {
   const navBarStyle = {
@@ -23,15 +25,19 @@ const SideScrollNavBar = () => {
   };
 
   const navItemStyle = {
+    marginRight: 5,
     display: "inline-block",
-    color: "#3B3B3B",
-    padding: "10px 10px",
+    backgroundColor: "black",
+    borderRadius: "50%",
+    height: 25,
+    color: "white",
+    padding: "10px ",
     cursor: "pointer",
-    transition: "background-color 0.3s",
+    // transition: "background-color 0.3s",
   };
 
   const navItemHoverStyle = {
-    backgroundColor: "#2f9ce8",
+    // backgroundColor: "black",
   };
 
   const smallScreenNavBarStyle = {
@@ -47,36 +53,140 @@ const SideScrollNavBar = () => {
     e.target.style.backgroundColor = "";
   };
 
+  const handleSmoothScroll = (e, target) => {
+    e.preventDefault();
+    const element = document.getElementById(target);
+    if (element) {
+      window.scrollTo({
+        top: element.offsetTop, // Adjust the offset as needed
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <div style={window.innerWidth < 600 ? smallScreenNavBarStyle : navBarStyle}>
       <nav>
         <ul style={navListStyle}>
-          <Link to="home" smooth={true} duration={500} offset={-50}>
+          <a href="#home" onClick={(e) => handleSmoothScroll(e, "home")}>
             <img
               src={logo}
               style={{
-                height: 40,
-                borderRadius: 40 / 2,
+                height: 45,
+                borderRadius: "50%",
                 marginLeft: 10,
                 marginRight: 10,
               }}
               alt="Logo"
             />
-          </Link>
+          </a>
           {[
-            { icon: <HomeIcon />, name: "Home" },
-            { icon: <Info />, name: "About" },
-            { icon: <ContactPage />, name: "Contact" },
+            {
+              icon: (
+                <>
+                  <svg width={0} height={0}>
+                    <linearGradient
+                      id="exampleColors"
+                      x1={1}
+                      y1={0}
+                      x2={1}
+                      y2={1}
+                      gradientTransform="rotate(45)"
+                    >
+                      <stop offset="0%" stopColor="#00cdff" />
+                      <stop offset="25%" stopColor="#8032ff" />
+                      <stop offset="50%" stopColor="#326dff" />
+                      <stop offset="100%" stopColor="#ff97fc" />
+                    </linearGradient>
+                  </svg>
+                  <HomeIcon sx={{ fill: "url(#exampleColors)" }} />
+                </>
+              ),
+              name: "Home",
+            },
+            {
+              icon: (
+                <>
+                  <svg width={0} height={0}>
+                    <linearGradient
+                      id="exampleColors"
+                      x1={1}
+                      y1={0}
+                      x2={1}
+                      y2={1}
+                      gradientTransform="rotate(45)"
+                    >
+                      <stop offset="0%" stopColor="#00cdff" />
+                      <stop offset="50%" stopColor="#8032ff" />
+                      <stop offset="50%" stopColor="#326dff" />
+                      <stop offset="100%" stopColor="#ff97fc" />
+                    </linearGradient>
+                  </svg>
+                  <InfoIcon sx={{ fill: "url(#exampleColors)" }} />
+                </>
+              ),
+              name: "About",
+            },
+            {
+              icon: (
+                <>
+                  <svg width={0} height={0}>
+                    <linearGradient
+                      id="exampleColors"
+                      x1={1}
+                      y1={0}
+                      x2={1}
+                      y2={1}
+                      gradientTransform="rotate(45)"
+                    >
+                      <stop offset="0%" stopColor="#00cdff" />
+                      <stop offset="25%" stopColor="#8032ff" />
+                      <stop offset="50%" stopColor="#326dff" />
+                      <stop offset="100%" stopColor="#ff97fc" />
+                    </linearGradient>
+                  </svg>
+                  <AssignmentIcon sx={{ fill: "url(#exampleColors)" }} />
+                </>
+              ),
+              name: "Projects",
+            },
+            {
+              icon: (
+                <>
+                  <svg width={0} height={0}>
+                    <linearGradient
+                      id="exampleColors"
+                      x1={1}
+                      y1={0}
+                      x2={1}
+                      y2={1}
+                      gradientTransform="rotate(45)"
+                    >
+                      <stop offset="0%" stopColor="#00cdff" />
+                      <stop offset="25%" stopColor="#8032ff" />
+                      <stop offset="50%" stopColor="#326dff" />
+                      <stop offset="100%" stopColor="#ff97fc" />
+                    </linearGradient>
+                  </svg>
+                  <ContactPageIcon sx={{ fill: "url(#exampleColors)" }} />
+                </>
+              ),
+              name: "Contact",
+            },
           ].map((item) => (
             <li
               key={item.name}
               style={navItemStyle}
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
+              // onMouseEnter={handleMouseEnter}
+              // onMouseLeave={handleMouseLeave}
             >
-              <Link to={item.name.toLowerCase()} smooth={true} duration={500}>
+              <a
+                href={`#${item.name.toLowerCase()}`}
+                onClick={(e) => handleSmoothScroll(e, item.name.toLowerCase())}
+                style={{ color: "inherit", textDecoration: "none" }}
+              >
                 {item.icon}
-              </Link>
+              </a>
             </li>
           ))}
         </ul>

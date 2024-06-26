@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import logo from "../logo.png";
 
 const Navbar = () => {
@@ -22,7 +21,6 @@ const Navbar = () => {
     },
     logo: {
       padding: "15px 20px",
-      // height: '50px'
     },
     mainNav: {
       listStyle: "none",
@@ -44,26 +42,26 @@ const Navbar = () => {
       <span style={styles.toggle} onClick={toggleNav}>
         &#9776;
       </span>
-      <Link to="/" style={styles.logo}>
-        <img src={logo} style={{ height: "60px" }} />
-      </Link>
+      <a href="/" style={styles.logo}>
+        <img src={logo} style={{ height: "60px" }} alt="Logo" />
+      </a>
       <ul
         style={{ ...styles.mainNav, flexDirection: isOpen ? "column" : "row" }}
       >
         <li style={styles.navItem}>
-          <Link to="/" style={styles.navLinks}>
+          <a href="/" style={styles.navLinks}>
             Home
-          </Link>
+          </a>
         </li>
         <li style={styles.navItem}>
-          <Link to="/about" style={styles.navLinks}>
+          <a href="/about" style={styles.navLinks}>
             About
-          </Link>
+          </a>
         </li>
         <li style={styles.navItem}>
-          <Link to="/contact" style={styles.navLinks}>
+          <a href="/contact" style={styles.navLinks}>
             Contact
-          </Link>
+          </a>
         </li>
       </ul>
     </nav>

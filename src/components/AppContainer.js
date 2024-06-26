@@ -1,14 +1,14 @@
 import React from "react";
 import "animate.css";
-import SideScrollNavBar from "./components/SideScrollNavBar";
-import Section from "./components/Section";
-import Home from "./components/Home";
-import About from "./components/About";
-import Contact from "./components/Contact";
-import Projects from "./components/Projects";
+import SideScrollNavBar from "./SideScrollNavBar";
+import Section from "./Section";
+import Home from "./Home";
+import About from "./About";
+import Contact from "./Contact";
+import Projects from "./Projects";
 const styles = {
   container: {
-    backgroundColor:
+    backgroundImage:
       "linear-gradient(to bottom right, #00cdff, #326dff, #8032ff, #ff97fc)",
     height: "100vh",
     display: "flex",
@@ -29,7 +29,7 @@ const styles = {
     padding: "30px",
   },
 };
-const App = () => {
+const AppContainer = () => {
   return (
     <div
       style={{
@@ -54,4 +54,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default AppContainer;
