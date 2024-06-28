@@ -24,6 +24,8 @@ const styles = {
     background: "linear-gradient(to right, #00cdff, #326dff, #8032ff, #ff97fc)",
     WebkitBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
+    position: "relative",
+    paddingBottom: "10px",
   },
   paragraph: {
     padding: "0 10px", // Adjust padding for better readability
@@ -44,6 +46,8 @@ const styles = {
     background: "linear-gradient(to right, #00cdff, #326dff, #8032ff, #ff97fc)",
     WebkitBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
+    position: "relative",
+    paddingBottom: "10px",
   },
   list: {
     listStyleType: "none",
@@ -81,14 +85,30 @@ function About() {
   return (
     <div style={styles.container}>
       <div
-        className={`animate__animated ${
-          headerInView ? "animate__fadeInUp" : ""
-        }`}
+        className={`animate__animated ${headerInView ? "animate__fadeIn" : ""}`}
       >
         <h1 style={styles.header} ref={headerRef}>
           About Me
+          <span
+            style={{
+              content: '""',
+              position: "absolute",
+              left: "0",
+              bottom: "0",
+              width: "100%",
+              height: "5px", // Adjust height as needed
+              background:
+                "linear-gradient(to right, #00cdff, #326dff, #8032ff, #ff97fc)",
+              borderRadius: "2px",
+            }}
+          />
         </h1>
-        <p style={styles.paragraph}>
+        <p
+          style={styles.paragraph}
+          className={`animate__animated ${
+            subHeaderInView ? "animate__fadeInUp" : ""
+          }`}
+        >
           Hi there! I'm Chanse Shaw, an HVAC Service Technician based in Las
           Vegas, NV. I have a passion for coding, video games, and reading
           different types of books. I am currently enrolled at Western Governors
@@ -104,14 +124,32 @@ function About() {
           <div>
             <h2
               ref={subHeaderRef}
+              style={styles.subHeader}
               className={`animate__animated ${
                 subHeaderInView ? "animate__fadeIn" : ""
               }`}
-              style={styles.subHeader}
             >
               My Skills
+              {/* <span
+                style={{
+                  content: '""',
+                  position: "absolute",
+                  left: "0",
+                  bottom: "0",
+                  width: "100%",
+                  height: "5px", // Adjust height as needed
+                  background:
+                    "linear-gradient(to right, #00cdff, #326dff, #8032ff, #ff97fc)",
+                  borderRadius: "2px",
+                }}
+              /> */}
             </h2>
-            <ul style={styles.list}>
+            <ul
+              style={styles.list}
+              className={`animate__animated ${
+                subHeaderInView ? "animate__fadeInUp" : ""
+              }`}
+            >
               <li style={styles.listItem}>JavaScript (React, Node.js)</li>
               <li style={styles.listItem}>HTML5 & CSS3</li>
               <li style={styles.listItem}>Responsive Web Design</li>
@@ -126,8 +164,26 @@ function About() {
               style={styles.subHeader}
             >
               Experience
+              {/* <span
+                style={{
+                  content: '""',
+                  position: "absolute",
+                  left: "0",
+                  bottom: "0",
+                  width: "100%",
+                  height: "5px", // Adjust height as needed
+                  background:
+                    "linear-gradient(to right, #00cdff, #326dff, #8032ff, #ff97fc)",
+                  borderRadius: "2px",
+                }}
+              /> */}
             </h2>
-            <ul style={styles.list}>
+            <ul
+              style={styles.list}
+              className={`animate__animated ${
+                subHeaderInView ? "animate__fadeInUp" : ""
+              }`}
+            >
               <li style={styles.listItem}>
                 HVAC Service Technician: 5 1/5 years
               </li>
