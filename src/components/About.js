@@ -81,7 +81,9 @@ function About() {
   return (
     <div style={styles.container}>
       <div
-        className={`animate__animated ${headerInView ? "animate__fadeIn" : ""}`}
+        className={`animate__animated ${
+          headerInView ? "animate__fadeInUp" : ""
+        }`}
       >
         <h1 style={styles.header} ref={headerRef}>
           About Me
